@@ -8,12 +8,20 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * イベントに関するコントローラ
+ */
 @Controller
-public class HelloWorldController {
+public class EventController {
 
-    @RequestMapping(value = "/helloworld", method = GET)
-    public String home() {
-        return "helloworld";
+    @RequestMapping(value = "/event", method = GET)
+    public String get() {
+        return "event";
+    }
+
+    @RequestMapping(value = "/event", method = POST)
+    public String post() {
+        return "event";
     }
 
 }
