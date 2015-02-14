@@ -4,8 +4,13 @@
 package jp.co.namihira.townbook.web.controller;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
+import jp.co.namihira.townbook.integration.dao.EventDao;
+import jp.co.namihira.townbook.integration.dto.EventDto;
+import jp.co.namihira.townbook.web.data.Event;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -14,13 +19,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class EventController {
 
+    @Autowired
+    private EventDao eventDao;
+
     @RequestMapping(value = "/event", method = GET)
     public String get() {
         return "event";
     }
 
     @RequestMapping(value = "/event", method = POST)
-    public String post() {
+    public String post(Event event, Model model) {
+        final EventDto dto = new EventDto();
+        dto.setTitle(event.getTitle());
+        eventDao.insert(dto);
         return "event";
     }
 

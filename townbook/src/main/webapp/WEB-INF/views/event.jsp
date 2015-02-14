@@ -10,11 +10,11 @@
 </head>
 
 <body>
-<form class="navbar-form navbar-left" role="search" action="/test" method="post">
+
+<form class="navbar-form navbar-left" role="search" action="/townbook/event" method="post">
   <div class="form-group">
-     名前：<input type="text" class="form-control" placeholder=""><br>
-     投稿：<input type="text" class="form-control" placeholder=""><br>
-  <button type="submit" class="btn btn-default">送信</button>
+     タイトル：<input type="text" name="title" class="form-control" placeholder=""><br>
+  <button type="submit" class="btn btn-default">登録</button>
   </div>
 </form>
 
