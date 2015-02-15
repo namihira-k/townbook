@@ -22,12 +22,12 @@ public class EventController {
     @Autowired
     private EventDao eventDao;
 
-    @RequestMapping(value = "/event", method = GET)
+    @RequestMapping(value = "/events", method = GET)
     public String get() {
         return "event";
     }
 
-    @RequestMapping(value = "/event", method = POST)
+    @RequestMapping(value = "/events", method = POST)
     public String post(Event event, Model model) {
         final EventDto dto = new EventDto();
         dto.setTitle(event.getTitle());
