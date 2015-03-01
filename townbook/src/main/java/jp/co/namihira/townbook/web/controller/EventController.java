@@ -6,7 +6,6 @@ package jp.co.namihira.townbook.web.controller;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 import jp.co.namihira.townbook.integration.dao.EventDao;
 import jp.co.namihira.townbook.integration.dto.EventDto;
-import jp.co.namihira.townbook.web.data.Event;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,10 +27,8 @@ public class EventController {
     }
 
     @RequestMapping(value = "/events", method = POST)
-    public String post(Event event, Model model) {
-        final EventDto dto = new EventDto();
-        dto.setTitle(event.getTitle());
-        eventDao.insert(dto);
+    public String post(EventDto event, Model model) {
+        eventDao.insert(event);
         return "event";
     }
 

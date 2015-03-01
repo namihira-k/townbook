@@ -13,6 +13,7 @@
   </build>
 
   <dependencies>
+  	<!-- Util -->
   	<dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>javax.servlet-api</artifactId>
@@ -23,6 +24,11 @@
    		<artifactId>javax.servlet.jsp-api</artifactId>
    		<version>2.3.1</version>
    		<scope>provided</scope>
+  	</dependency>
+  	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>1.16.2</version>
   	</dependency>
     <dependency>
       	<groupId>junit</groupId>

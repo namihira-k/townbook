@@ -3,16 +3,14 @@
  */
 package jp.co.namihira.townbook.web.data;
 
+import lombok.Data;
+
+@Data
 public class Event {
 
     private String title;
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    private String prefecture;
+    private String town;
+    private String content;
 
 }

@@ -3,24 +3,15 @@
  */
 package jp.co.namihira.townbook.integration.dto;
 
+import lombok.Data;
+
+@Data
 public class EventDto {
 
     private int id;
     private String title;
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    private String prefecture;
+    private String town;
+    private String content;
 
 }
