@@ -3,9 +3,12 @@
  */
 package jp.co.namihira.townbook.integration.dao;
 
+import java.util.List;
+
 import jp.co.namihira.townbook.integration.dto.EventDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -24,5 +27,19 @@ public class EventDao {
                               new BeanPropertySqlParameterSource(dto));
         return result;
     }
+
+    public List<EventDto> selectAll(){
+        return jdbcTemplate.query(
+                "SELECT * FROM Events",
+                new BeanPropertySqlParameterSource(new EventDto()),
+                new BeanPropertyRowMapper<EventDto>(EventDto.class));
+    }
+
+    public int deleteByPk(final EventDto dto) {
+        return jdbcTemplate.update(
+                    "DELETE FROM Events "
+                  + "WHERE id = :id",
+              new BeanPropertySqlParameterSource(dto));
+            };
 
 }
