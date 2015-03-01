@@ -9,6 +9,7 @@ import java.util.List;
 
 import jp.co.namihira.townbook.integration.dto.EventDto;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +17,16 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * EventDao関連のつとクラス
+ * {@link EventDao}のテストクラス
  */
-@ContextConfiguration(locations = { "/spring-context.xml" })
+@ContextConfiguration(locations="classpath:spring-context-test.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class EventDaoTest {
 
     @Autowired
     private EventDao eventDao;
 
+    @Ignore
     @Test
     public void test_selectAll(){
         // setup
