@@ -6,5 +6,8 @@
 
 <body>
 <jsp:include page="navbar.jsp" flush="false"/>
+
+
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

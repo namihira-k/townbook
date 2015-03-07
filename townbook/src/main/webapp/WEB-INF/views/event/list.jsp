@@ -15,5 +15,7 @@
 <hr>
 </c:forEach>
 
+
+<jsp:include page="../footer.jsp"/>
 </body>
 </html>
