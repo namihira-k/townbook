@@ -15,28 +15,33 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * イベントに関するコントローラ
+ * イベント管理に関するコントローラ
  */
 @Controller
-public class EventController {
+public class EventManagementController {
 
     @Autowired
     private EventDao eventDao;
 
-    @RequestMapping(value = "/events", method = GET)
+    @RequestMapping(value = "/events/management", method = GET)
     public String get(Model model) {
         List<EventDto> events = eventDao.selectAll();
         model.addAttribute("events", events);
-        return "event/list";
+        return "event/management";
     }
 
-    @RequestMapping(value = "/events", method = POST)
+    @RequestMapping(value = "/events/management/delete", method = POST)
     @Transactional(rollbackFor = Throwable.class)
-    public String post(EventDto event, Model model) {
-        eventDao.insert(event);
-        return "event/list";
+    public String delete(
+            @RequestParam(value = "id", required = true) int id,
+            Model model) {
+        eventDao.deleteByPk(id);
+        List<EventDto> events = eventDao.selectAll();
+        model.addAttribute("events", events);
+        return "event/management";
     }
 
 }

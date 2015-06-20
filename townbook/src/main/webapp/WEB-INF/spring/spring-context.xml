@@ -13,6 +13,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
  <context:component-scan base-package="jp.co.namihira.townbook" />
 
  <context:property-placeholder location="classpath:jdbc.properties"/>
+ <mvc:resources mapping="/resources/**" location="resources/" />
 
  <!-- DB -->
  <bean id="dataSource"

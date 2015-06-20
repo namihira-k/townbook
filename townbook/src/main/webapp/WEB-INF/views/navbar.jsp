@@ -17,6 +17,7 @@
 		<li><a href="/townbook/events/registration">イベントを登録する<span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+	    <li><a href="/townbook/events/management">イベントを管理する</a></li>
         <li><a href="#">ログインする</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -35,6 +35,12 @@ public class EventDao {
                 new BeanPropertyRowMapper<EventDto>(EventDto.class));
     }
 
+    public int deleteByPk(final int id) {
+        final EventDto dto = new EventDto();
+        dto.setId(id);
+        return deleteByPk(dto);
+    };
+
     public int deleteByPk(final EventDto dto) {
         return jdbcTemplate.update(
                     "DELETE FROM Events "
