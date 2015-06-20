@@ -8,13 +8,13 @@
 <jsp:include page="../navbar.jsp" flush="false"/>
 
 <c:forEach var="event" items="${events}">
+<div class="well">
 イベント名：<c:out value="${event.title}"/><br>
 都道府県：<c:out value="${event.prefecture}"/><br>
 街：<c:out value="${event.town}"/><br>
 内容：<c:out value="${event.content}"/><br>
-<hr>
+</div>
 </c:forEach>
-
 
 <jsp:include page="../footer.jsp"/>
 </body>

@@ -8,7 +8,7 @@
 <jsp:include page="../navbar.jsp" flush="false"/>
 
 <c:forEach var="event" items="${events}">
-<!-- <form class="navbar-form navbar-left" action="/townbook/events/delete" method="post">  -->
+<div class="well">
 <form action="/townbook/events/management/delete" method="post">
 イベント名：<c:out value="${event.title}"/><br>
 都道府県：<c:out value="${event.prefecture}"/><br>
@@ -17,8 +17,7 @@
 <input type="hidden" name="id" value="${event.id}"/>
 <button type="submit" class="btn btn-danger">削除する</button>
 </form>
-<hr>
-<br>
+</div>
 </c:forEach>
 
 <jsp:include page="../footer.jsp"/>
