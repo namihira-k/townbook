@@ -1,12 +1,3 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<html>
-<head>
-<jsp:include page="../header.jsp" flush="false"/>
-</head>
-
-<body>
-<jsp:include page="../navbar.jsp" flush="false"/>
-
     <form class="form-horizontal" action="/townbook/events" method="post">
         <div class="form-group">
             <label for="title" class="control-label col-xs-2">イベント名</label>
@@ -42,7 +33,3 @@
             </div>
         </div>
     </form>
-
-<jsp:include page="../footer.jsp"/>
-</body>
-</html>

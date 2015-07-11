@@ -16,7 +16,7 @@ public class EventRegistrationController {
 
     @RequestMapping(value = "/events/registration", method = GET)
     public String get() {
-        return "event/registration";
+        return "event.registration";
     }
 
 }

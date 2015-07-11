@@ -30,7 +30,7 @@ public class EventManagementController {
     public String get(Model model) {
         List<EventDto> events = eventDao.selectAll();
         model.addAttribute("events", events);
-        return "event/management";
+        return "event.management";
     }
 
     @RequestMapping(value = "/events/management/delete", method = POST)
@@ -41,7 +41,7 @@ public class EventManagementController {
         eventDao.deleteByPk(id);
         List<EventDto> events = eventDao.selectAll();
         model.addAttribute("events", events);
-        return "event/management";
+        return "event.management";
     }
 
 }

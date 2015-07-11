@@ -29,14 +29,14 @@ public class EventController {
     public String get(Model model) {
         List<EventDto> events = eventDao.selectAll();
         model.addAttribute("events", events);
-        return "event/list";
+        return "event.list";
     }
 
     @RequestMapping(value = "/events", method = POST)
     @Transactional(rollbackFor = Throwable.class)
     public String post(EventDto event, Model model) {
         eventDao.insert(event);
-        return "event/list";
+        return "event.list";
     }
 
 }
