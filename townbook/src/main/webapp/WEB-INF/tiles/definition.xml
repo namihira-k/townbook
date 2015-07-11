@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+  <definition name="baseLayout" template="/WEB-INF/views/common/layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+    <put-attribute name="navigation" value="/WEB-INF/views/common/navigation.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+  </definition>
+
+  <definition name="home" extends="baseLayout">
+    <put-attribute name="title" value="home" />
+    <put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+  </definition>
+
+  <definition name="event.list" extends="baseLayout">
+    <put-attribute name="title" value="Event List" />
+    <put-attribute name="body" value="/WEB-INF/views/event/list.jsp" />
+  </definition>
+
+  <definition name="event.management" extends="baseLayout">
+    <put-attribute name="title" value="Event Management" />
+    <put-attribute name="body" value="/WEB-INF/views/event/management.jsp" />
+  </definition>
+
+  <definition name="event.registration" extends="baseLayout">
+    <put-attribute name="title" value="Event registration" />
+    <put-attribute name="body" value="/WEB-INF/views/event/registration.jsp" />
+  </definition>
+
+</tiles-definitions>
