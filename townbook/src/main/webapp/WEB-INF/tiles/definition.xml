@@ -7,6 +7,7 @@
   <definition name="baseLayout" template="/WEB-INF/views/common/layout.jsp">
     <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
     <put-attribute name="navigation" value="/WEB-INF/views/common/navigation.jsp" />
+    <put-attribute name="controllers" value="" />
     <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
   </definition>
 
@@ -22,7 +23,8 @@
 
   <definition name="event.management" extends="baseLayout">
     <put-attribute name="title" value="Event Management" />
-    <put-attribute name="body" value="/WEB-INF/views/event/management.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/event/management/body.jsp" />
+    <put-attribute name="controllers" value="/WEB-INF/views/event/management/controllers.jsp" />
   </definition>
 
   <definition name="event.registration" extends="baseLayout">
