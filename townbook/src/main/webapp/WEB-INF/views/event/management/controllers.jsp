@@ -14,7 +14,7 @@ app.service('eventService', ['$rootScope', function ($rootScope) {
 	    }
 }]);
 
-app.controller('eventMangementController', ['$scope', 'eventService', function ($scope, eventService) {
+app.controller('eventManagementController', ['$scope', 'eventService', function ($scope, eventService) {
 	$scope.events = []
 
 	$scope.init = function () {

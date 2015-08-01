@@ -1,4 +1,4 @@
-<div ng-controller="eventMangementController"  ng-init="init()">
+<div ng-controller="eventManagementController"  ng-init="init()">
     <div class="well" ng-repeat="event in events">
        <form ng-submit="deleteEvent()">
                     イベント名：{{event.title}}<br>
