@@ -1,5 +1,5 @@
 <script>
-var app = angular.module('townbookApp', [])
+var app = angular.module('townbookApp')
 
 app.service('eventService', ['$rootScope', function ($rootScope) {
 		this.getEvents = function () {

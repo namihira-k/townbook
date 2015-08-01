@@ -3,6 +3,7 @@
 <head>
   <title><tiles:getAsString name="title"/></title>
   <tiles:insertAttribute name="header" />
+  <tiles:insertAttribute name="commonScript" />
 </head>
 
 <body>

@@ -6,6 +6,7 @@
 <tiles-definitions>
   <definition name="baseLayout" template="/WEB-INF/views/common/layout.jsp">
     <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+    <put-attribute name="commonScript" value="/WEB-INF/views/common/script.jsp" />
     <put-attribute name="navigation" value="/WEB-INF/views/common/navigation.jsp" />
     <put-attribute name="controllers" value="" />
     <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
