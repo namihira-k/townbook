@@ -2,10 +2,17 @@
 var app = angular.module('townbookApp')
 
 app.controller('eventManagementController', ['$scope', 'eventService', function ($scope, eventService) {
-	$scope.events = []
+	$scope.events = [];
+
+	$scope.eventId;
 
 	$scope.init = function () {
-		eventService.getEvents()
+		eventService.getEvents();
+	}
+
+	$scope.deleteEvent = function(){
+		console.log("eventId : " + $scope.eventId);
+		eventService.deleteEvent($scope.eventId);
 	}
 
     $scope.$on('getEventsCompleted', function (event, params) {
