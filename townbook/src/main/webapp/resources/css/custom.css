@@ -1,9 +1,18 @@
-/* Sticky footer styles
--------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
 }
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.jumbotron {
+    height: 1000px;
+    background: url("../img/home.jpg") center 0 no-repeat;
+    background-size: cover;
+}
+
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
@@ -12,22 +21,17 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 40px;
   background-color: gray;
 }
 
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
 .container {
-  width: auto;
+/*  width: auto; */
   max-width: 680px;
   padding: 0 15px;
 }
 .container .text-muted {
+  color: white;
   margin: 10px 0;
   text-align: center;
 }
