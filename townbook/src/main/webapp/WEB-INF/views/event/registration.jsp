@@ -8,7 +8,7 @@
         <div class="form-group">
             <label for="prefecture" class="control-label col-xs-2">都道府県</label>
             <div class="col-xs-10">
-				<select class="form-control" id="prefecture" name="prefecture">
+				<select class="form-control" id="prefectureId" name="prefectureId">
     				<option value="hokkaido">北海道</option>
     				<option value="aomori">青森</option>
     				<option value="iwate">岩手</option>

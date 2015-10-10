@@ -10,7 +10,8 @@ public class EventDto {
 
     private int id;
     private String title;
-    private String prefecture;
+    private String prefectureId;
+    private String prefectureName;
     private String town;
     private String content;
 
