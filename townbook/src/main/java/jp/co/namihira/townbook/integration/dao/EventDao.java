@@ -30,7 +30,7 @@ public class EventDao {
 
     public List<EventDto> selectAll(){
         return jdbcTemplate.query(
-                "SELECT * FROM Events",
+                "SELECT * FROM Events ORDER BY id DESC",
                 new BeanPropertySqlParameterSource(new EventDto()),
                 new BeanPropertyRowMapper<EventDto>(EventDto.class));
     }

@@ -6,11 +6,14 @@ package jp.co.namihira.townbook.web.controller.api;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 import java.util.List;
+import java.util.Locale;
 
 import jp.co.namihira.townbook.integration.dao.EventDao;
 import jp.co.namihira.townbook.integration.dto.EventDto;
+import jp.co.namihira.townbook.web.data.Prefecture;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,14 +28,22 @@ public class EventApiController {
     @Autowired
     private EventDao eventDao;
 
+    @Autowired
+    private MessageSource messageSource;
+
     @RequestMapping(value = "/api/events", method = GET)
-    public List<EventDto> get() {
-        return eventDao.selectAll();
+    public List<EventDto> get(Locale locale) {
+        final List<EventDto> events = eventDao.selectAll();
+        events.forEach(e -> {
+            final Prefecture p = Prefecture.parse(e.getPrefectureId());
+            e.setPrefectureName(p.getDisplayname(messageSource, locale));
+        });
+        return events;
     }
 
     @RequestMapping(value = "/api/events/{id}", method = DELETE)
     @Transactional(rollbackFor = Throwable.class)
-    public void delete(@PathVariable("id") int id) {
+    public void delete(@PathVariable int id) {
         eventDao.deleteByPk(id);
     }
 

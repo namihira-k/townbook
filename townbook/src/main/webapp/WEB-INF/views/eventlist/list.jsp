@@ -12,7 +12,7 @@
 					</dd>
 					<dt>都道府県</dt>
 					<dd>
-						<c:out value="${event.prefectureId}" />
+						<c:out value="${event.prefectureName}" />
 					</dd>
 					<dt>街</dt>
 					<dd>

@@ -23,10 +23,10 @@
     				<option value="chiba">千葉</option>
     				<option value="tokyo" selected="selected">東京</option>
     				<option value="kanagawa">神奈川</option>
-    				<option value="chigata">新潟</option>
+    				<option value="niigata">新潟</option>
     				<option value="toyama">富山</option>
     				<option value="ishikawa">石川</option>
-    				<option value="fukushima">福井</option>
+    				<option value="fukui">福井</option>
     				<option value="yamanashi">山梨</option>
     				<option value="nagano">長野</option>
     				<option value="gifu">岐阜</option>
@@ -43,12 +43,12 @@
     				<option value="shimane">島根</option>
     				<option value="okayama">岡山</option>
     				<option value="hiroshima">広島</option>
-    				<option value="yamagata">山口</option>
+    				<option value="yamaguchi">山口</option>
     				<option value="tokushima">徳島</option>
     				<option value="kagawa">香川</option>
     				<option value="ehime">愛媛</option>
-    				<option value="ohti">高知</option>
-    				<option value="hukuoka">福岡</option>
+    				<option value="kohti">高知</option>
+    				<option value="fukuoka">福岡</option>
     				<option value="saga">佐賀</option>
     				<option value="nagasaki">長崎</option>
     				<option value="kumamoto">熊本</option>
