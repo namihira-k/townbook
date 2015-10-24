@@ -18,8 +18,12 @@
     <put-attribute name="body" value="/WEB-INF/views/home/home.jsp" />
   </definition>
 
+  <definition name="event.info" extends="baseLayout">
+    <put-attribute name="body" value="/WEB-INF/views/event/body.jsp" />
+  </definition>
+
   <definition name="event.list" extends="baseLayout">
-    <put-attribute name="body" value="/WEB-INF/views/eventlist/list.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/eventlist/body.jsp" />
   </definition>
 
   <definition name="event.management" extends="baseLayout">

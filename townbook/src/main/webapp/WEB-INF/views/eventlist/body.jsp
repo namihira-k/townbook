@@ -14,15 +14,14 @@
 					<dd>
 						<c:out value="${event.prefectureName}" />
 					</dd>
-					<dt>街</dt>
+					<dt>場所</dt>
 					<dd>
 						<c:out value="${event.town}" />
 					</dd>
-					<dt>概要</dt>
-					<dd>
-						<c:out value="${event.content}" />
-					</dd>
 				</dl>
+				<div style="text-align: center">
+					<a href="http://localhost:8080/townbook/view/events/${event.id}" target = "_blank">詳細をみる</a>
+				</div>
 			</div>
 		</c:forEach>
 	</div>

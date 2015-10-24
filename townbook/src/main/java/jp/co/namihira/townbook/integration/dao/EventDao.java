@@ -10,6 +10,7 @@ import jp.co.namihira.townbook.integration.dto.EventDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -33,6 +34,14 @@ public class EventDao {
                 "SELECT * FROM Events ORDER BY id DESC",
                 new BeanPropertySqlParameterSource(new EventDto()),
                 new BeanPropertyRowMapper<EventDto>(EventDto.class));
+    }
+
+    public EventDto selectByPK(final int id){
+        final List<EventDto> dtos = jdbcTemplate.query(
+                                                    "SELECT * FROM Events WHERE id = :id",
+                                                    new MapSqlParameterSource().addValue("id", id),
+                                                    new BeanPropertyRowMapper<EventDto>(EventDto.class));
+        return dtos.get(0);
     }
 
     public int deleteByPk(final int id) {
