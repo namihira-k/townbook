@@ -19,7 +19,7 @@
   </definition>
 
   <definition name=".event.info" extends=".baseLayout">
-    <put-attribute name="body" value="/WEB-INF/views/event/body.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/eventinfo/body.jsp" />
   </definition>
 
   <definition name=".event.list" extends=".baseLayout">
@@ -27,12 +27,12 @@
   </definition>
 
   <definition name=".event.management" extends=".baseLayout">
-    <put-attribute name="body" value="/WEB-INF/views/event/management/body.jsp" />
-    <put-attribute name="controllers" value="/WEB-INF/views/event/management/controllers.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/eventmanagement/body.jsp" />
+    <put-attribute name="controllers" value="/WEB-INF/views/eventmanagement/controllers.jsp" />
   </definition>
 
   <definition name=".event.registration" extends=".baseLayout">
-    <put-attribute name="body" value="/WEB-INF/views/event/registration.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/eventregistration/body.jsp" />
   </definition>
 
 </tiles-definitions>
