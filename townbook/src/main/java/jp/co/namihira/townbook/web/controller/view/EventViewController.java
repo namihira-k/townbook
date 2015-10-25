@@ -5,10 +5,12 @@ package jp.co.namihira.townbook.web.controller.view;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
+import java.util.List;
 import java.util.Locale;
 
 import jp.co.namihira.townbook.integration.dao.EventDao;
 import jp.co.namihira.townbook.integration.dto.EventDto;
+import jp.co.namihira.townbook.web.controller.view.AbstractViewController;
 import jp.co.namihira.townbook.web.data.Prefecture;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * イベントに関するビューコントローラ
  */
 @Controller
-public class EventViewController {
+public class EventViewController extends AbstractViewController {
 
     @Autowired
     private EventDao eventDao;
@@ -30,13 +32,24 @@ public class EventViewController {
     @Autowired
     private MessageSource messageSource;
 
-    @RequestMapping(value = "/view/events/{id}", method = GET)
+    @RequestMapping(value = "/events", method = GET)
+    public String get(Locale locale, Model model) {
+        final List<EventDto> events = eventDao.selectAll();
+        events.forEach(e -> {
+            final Prefecture p = Prefecture.parse(e.getPrefectureId());
+            e.setPrefectureName(p.getDisplayname(messageSource, locale));
+        });
+        model.addAttribute("events", events);
+        return ".event.list";
+    }
+
+    @RequestMapping(value = "/events/{id}", method = GET)
     public String get(Locale locale, Model model, @PathVariable int id) {
         final EventDto event = eventDao.selectByPK(id);
         final Prefecture p = Prefecture.parse(event.getPrefectureId());
         event.setPrefectureName(p.getDisplayname(messageSource, locale));
         model.addAttribute("event", event);
-        return "event.info";
+        return ".event.info";
     }
 
 }

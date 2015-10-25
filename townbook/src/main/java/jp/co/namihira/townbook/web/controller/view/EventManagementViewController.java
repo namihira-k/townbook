@@ -1,7 +1,7 @@
 /**
  * Copyright 2015 Kosuke Namihira All Rights Reserved.
  */
-package jp.co.namihira.townbook.web.controller;
+package jp.co.namihira.townbook.web.controller.view;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
@@ -21,19 +21,19 @@ import org.springframework.web.bind.annotation.RequestParam;
  * イベント管理に関するコントローラ
  */
 @Controller
-public class EventManagementController {
+public class EventManagementViewController {
 
     @Autowired
     private EventDao eventDao;
 
-    @RequestMapping(value = "/events/management", method = GET)
+    @RequestMapping(value = "/view/events/management", method = GET)
     public String get(Model model) {
         List<EventDto> events = eventDao.selectAll();
         model.addAttribute("events", events);
-        return "event.management";
+        return ".event.management";
     }
 
-    @RequestMapping(value = "/events/management/delete", method = POST)
+    @RequestMapping(value = "/view/events/management/delete", method = POST)
     @Transactional(rollbackFor = Throwable.class)
     public String delete(
             @RequestParam(value = "id", required = true) int id,
@@ -41,7 +41,7 @@ public class EventManagementController {
         eventDao.deleteByPk(id);
         List<EventDto> events = eventDao.selectAll();
         model.addAttribute("events", events);
-        return "event.management";
+        return ".event.management";
     }
 
 }

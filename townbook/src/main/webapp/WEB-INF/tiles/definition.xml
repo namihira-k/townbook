@@ -4,7 +4,7 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-  <definition name="baseLayout" template="/WEB-INF/views/common/layout.jsp">
+  <definition name=".baseLayout" template="/WEB-INF/views/common/layout.jsp">
     <put-attribute name="title" value="townbook" />
     <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
     <put-attribute name="commonScript" value="/WEB-INF/views/common/script.jsp" />
@@ -14,24 +14,24 @@
     <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
   </definition>
 
-  <definition name="home" extends="baseLayout">
-    <put-attribute name="body" value="/WEB-INF/views/home/home.jsp" />
+  <definition name=".home" extends=".baseLayout">
+    <put-attribute name="body" value="/WEB-INF/views/home/body.jsp" />
   </definition>
 
-  <definition name="event.info" extends="baseLayout">
+  <definition name=".event.info" extends=".baseLayout">
     <put-attribute name="body" value="/WEB-INF/views/event/body.jsp" />
   </definition>
 
-  <definition name="event.list" extends="baseLayout">
+  <definition name=".event.list" extends=".baseLayout">
     <put-attribute name="body" value="/WEB-INF/views/eventlist/body.jsp" />
   </definition>
 
-  <definition name="event.management" extends="baseLayout">
+  <definition name=".event.management" extends=".baseLayout">
     <put-attribute name="body" value="/WEB-INF/views/event/management/body.jsp" />
     <put-attribute name="controllers" value="/WEB-INF/views/event/management/controllers.jsp" />
   </definition>
 
-  <definition name="event.registration" extends="baseLayout">
+  <definition name=".event.registration" extends=".baseLayout">
     <put-attribute name="body" value="/WEB-INF/views/event/registration.jsp" />
   </definition>
 
