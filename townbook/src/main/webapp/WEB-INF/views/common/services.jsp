@@ -12,7 +12,7 @@
 				success : function(json) {
 					$rootScope.$broadcast('loginSuccess', json)
 				},
-				error : function(data) {
+				error : function(json) {
 					$rootScope.$broadcast('loginError', json)
 				}
 			});

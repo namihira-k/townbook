@@ -13,6 +13,7 @@
 
 	    $scope.$on('loginSuccess', function (event, response) {
 	    	$window.location.href = '/townbook/view/events';
+			$scope.disabled = false;
 	    });
 	}]);
 
