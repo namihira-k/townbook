@@ -12,9 +12,16 @@
 		};
 
 	    $scope.$on('loginSuccess', function (event, response) {
-	    	$window.location.href = '/townbook/view/events';
 			$scope.disabled = false;
+	    	$window.location.href = '/townbook/view/events';
 	    });
+
+	    $scope.$on('loginError', function (event, response) {
+			$scope.disabled = false;
+			$scope.alert = {msg: "アカウント名またはパスワードが間違っています"};
+			$scope.$apply();
+	    });
+
 	}]);
 
 </script>

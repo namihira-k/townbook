@@ -10,10 +10,10 @@
 				data : JSON.stringify(user),
 				dataType : 'json',
 				success : function(json) {
-					$rootScope.$broadcast('loginSuccess', json)
+					$rootScope.$broadcast('loginSuccess', json);
 				},
 				error : function(json) {
-					$rootScope.$broadcast('loginError', json)
+					$rootScope.$broadcast('loginError', json);
 				}
 			});
 		}
