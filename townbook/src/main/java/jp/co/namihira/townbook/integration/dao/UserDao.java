@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 import jp.co.namihira.townbook.integration.dto.UserDto;
+import jp.co.namihira.townbook.util.CommonUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -39,6 +40,19 @@ public class UserDao {
                 new BeanPropertySqlParameterSource(new UserDto()),
                 new BeanPropertyRowMapper<UserDto>(UserDto.class));
     }
+
+    public UserDto selectByUserIdAndPassword(final String userId, final String password){
+        final UserDto input = new UserDto();
+        input.setUserId(userId);
+        input.setPassword(password);
+        final List<UserDto> result = jdbcTemplate.query(
+                                                    "SELECT * FROM Users "
+                                                  + "WHERE userId = :userId AND password = :password",
+                                                  new BeanPropertySqlParameterSource(input),
+                                                  new BeanPropertyRowMapper<UserDto>(UserDto.class));
+        return CommonUtil.isEmpty(result) ? null : result.get(0);
+    }
+
 
     public int deleteByPk(final int id) {
         final UserDto dto = new UserDto();
