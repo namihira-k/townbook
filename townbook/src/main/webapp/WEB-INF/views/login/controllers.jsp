@@ -1,7 +1,7 @@
 <script>
 	var app = angular.module('townbookApp')
 
-	app.controller('loginController', [ '$scope', '$location', 'authService', function($scope, $location, authService) {
+	app.controller('loginController', [ '$scope', '$location', '$window', 'authService', function($scope, $location, $window, authService) {
 		$scope.login = function() {
 			$scope.disabled = true;
 			var input = {
@@ -12,8 +12,7 @@
 		};
 
 	    $scope.$on('loginSuccess', function (event, response) {
-	    	$location.path('/townbook/view/events');
-	    	$scope.$apply();
+	    	$window.location.href = '/townbook/view/events';
 	    });
 	}]);
 
