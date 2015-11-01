@@ -18,6 +18,11 @@
     <put-attribute name="body" value="/WEB-INF/views/home/body.jsp" />
   </definition>
 
+  <definition name=".login" extends=".baseLayout">
+    <put-attribute name="body" value="/WEB-INF/views/login/body.jsp" />
+    <put-attribute name="controllers" value="/WEB-INF/views/login/controllers.jsp" />
+  </definition>
+
   <definition name=".event.info" extends=".baseLayout">
     <put-attribute name="body" value="/WEB-INF/views/eventinfo/body.jsp" />
   </definition>

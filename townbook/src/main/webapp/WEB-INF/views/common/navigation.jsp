@@ -20,7 +20,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
 	    <li><a href="${contextPath}/view/events/management">イベントを管理する</a></li>
-        <li><a href="#">ログインする</a></li>
+        <li><a href="${contextPath}/view/login">ログインする</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
