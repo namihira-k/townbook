@@ -5,6 +5,7 @@ package jp.co.namihira.townbook.integration.dao;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import jp.co.namihira.townbook.integration.dto.EventDto;
@@ -25,6 +26,27 @@ public class EventDaoTest {
 
     @Autowired
     private EventDao eventDao;
+
+    @Test
+    public void test_insert(){
+        // setup
+        final EventDto dto = new EventDto();
+        dto.setTitle("hoge");
+        dto.setContent("hoge");
+        dto.setPrefectureId("tokyo");
+        dto.setPlace("町田");
+        dto.setStartDateTime(LocalDateTime.now());
+        dto.setEndDateTime(LocalDateTime.now());
+
+        System.out.println(dto.getStartDateTime().toString());
+
+        // action
+        final int result = eventDao.insert(dto);
+
+        // check
+        assertNotEquals(0, result);
+    }
+
 
     @Ignore
     @Test

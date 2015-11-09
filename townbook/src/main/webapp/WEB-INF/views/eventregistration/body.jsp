@@ -60,9 +60,9 @@
              </div>
         </div>
         <div class="form-group">
-            <label for="town" class="control-label col-xs-2">区市町村</label>
+            <label for="place" class="control-label col-xs-2">場所</label>
             <div class="col-xs-10">
-                <input type="text" class="form-control" id="town" name="town" placeholder="町田">
+                <input type="text" class="form-control" id="place" name="place" placeholder="町田">
             </div>
         </div>
         <div class="form-group">

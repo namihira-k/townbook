@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  * イベントに関するコントローラ
  */
 @RestController
-public class EventApiController {
+public class EventApiController extends AbstractApiController {
 
     @Autowired
     private EventDao eventDao;
@@ -31,7 +32,7 @@ public class EventApiController {
     @Autowired
     private MessageSource messageSource;
 
-    @RequestMapping(value = "/api/events", method = GET)
+    @RequestMapping(value = "/events", method = GET)
     public List<EventDto> get(Locale locale) {
         final List<EventDto> events = eventDao.selectAll();
         events.forEach(e -> {
@@ -41,7 +42,13 @@ public class EventApiController {
         return events;
     }
 
-    @RequestMapping(value = "/api/events/{id}", method = DELETE)
+    @RequestMapping(value = "/events", method = POST)
+    public EventDto post(@RequestBody EventDto event) {
+        eventDao.insert(event);
+        return event;
+    }
+
+    @RequestMapping(value = "/events/{id}", method = DELETE)
     @Transactional(rollbackFor = Throwable.class)
     public void delete(@PathVariable int id) {
         eventDao.deleteByPk(id);

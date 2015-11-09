@@ -23,8 +23,9 @@ public class EventDao {
     public int insert(final EventDto dto){
         final int result = jdbcTemplate.update(
                               "INSERT INTO Events "
-                              + "(title, prefectureId, town, content)" + " VALUES "
-                              + "(:title, :prefectureId, :town, :content) ",
+                              + "(title, prefectureId, place, content, startDateTime, endDateTime, url) "
+                              + "VALUES "
+                              + "(:title, :prefectureId, :place, :content, :startDateTime, :endDateTime, :url) ",
                               new BeanPropertySqlParameterSource(dto));
         return result;
     }
