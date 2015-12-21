@@ -1,3 +1,7 @@
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+	<h1>イベント登録</h1>
     <form class="form-horizontal" action="/townbook/events" method="post">
         <div class="form-group">
             <label for="title" class="control-label col-xs-2">イベント名</label>
@@ -68,7 +72,7 @@
         <div class="form-group">
             <label for="content" class="control-label col-xs-2">内容</label>
             <div class="col-xs-10">
-                <input type="text" class="form-control" id="content" name="content" placeholder="勉強します">
+                <textarea class="form-control" id="content" name="content" rows="8" placeholder="内容を書いて下さい" style="resize:none;"></textarea>
             </div>
         </div>
         <div class="form-group">
@@ -77,3 +81,6 @@
             </div>
         </div>
     </form>
+    </div>
+	<div class="col-md-3"></div>
+</div>
