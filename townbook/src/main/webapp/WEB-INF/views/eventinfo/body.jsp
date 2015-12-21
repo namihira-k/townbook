@@ -14,7 +14,7 @@
 				</dd>
 				<dt>場所</dt>
 				<dd>
-					<c:out value="${event.town}" />
+					<c:out value="${event.place}" />
 				</dd>
 			</dl>
 		</div>
