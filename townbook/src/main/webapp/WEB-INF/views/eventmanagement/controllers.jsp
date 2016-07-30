@@ -5,12 +5,12 @@ app.controller('eventManagementController', ['$scope', 'eventService', function 
   $scope.events = [];
 
   $scope.init = function () {
-    eventService.getEvents();
+    _getEvent();
   }
 
   $scope.deleteEvent = function(event){
-    console.log("eventId : " + event.id);
     eventService.deleteEvent(event.id);
+    $scope.init();
   }
 
   $scope.$on('getEventsCompleted', function (event, params) {
@@ -19,5 +19,9 @@ app.controller('eventManagementController', ['$scope', 'eventService', function 
     });
   });
 
+  _getEvent = function() {
+	eventService.getEvents();
+  }
+  
 }]);
 </script>
