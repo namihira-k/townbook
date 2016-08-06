@@ -2,10 +2,9 @@
 var app = angular.module('townbookApp')
 
 app.controller('eventMgmtController', ['$scope', 'eventService', function ($scope, eventService) {
-
-  $scope.postEvent = function(){
-    console.log("called postEvent");
-    eventService.postEvent();
+    
+  $scope.postEvent = function(event){
+    eventService.postEvent(event);
   }
 
   $scope.$on('postEventCompleted', function (event, params) {

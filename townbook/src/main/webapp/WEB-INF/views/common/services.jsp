@@ -20,11 +20,13 @@
 	} ]);
 
 	app.service('eventService', [ '$rootScope', function($rootScope) {
-		this.postEvent = function() {
-		  $.ajax({
-		    type : 'POST',
-		    url : '/townbook/api/events',
-		    dataType : 'json',
+		this.postEvent = function(event) {
+      $.ajax({
+        type : 'POST',
+        url : '/townbook/api/events',
+        contentType : 'application/json',
+        data : JSON.stringify(event),
+        dataType : 'json',
 		    success : function(json) {
 		      $rootScope.$broadcast('postEventCompleted', json)
 		    }
