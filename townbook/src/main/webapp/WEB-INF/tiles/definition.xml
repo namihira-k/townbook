@@ -38,6 +38,7 @@
 
   <definition name=".event.registration" extends=".baseLayout">
     <put-attribute name="body" value="/WEB-INF/views/eventregistration/body.jsp" />
+    <put-attribute name="controllers" value="/WEB-INF/views/eventregistration/controllers.jsp" />
   </definition>
 
 </tiles-definitions>
