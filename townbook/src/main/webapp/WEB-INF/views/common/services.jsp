@@ -45,12 +45,12 @@
 		}
 
 		this.deleteEvent = function(id) {
-			console.log("id : " + id);
 			$.ajax({
 				type : 'DELETE',
 				url : '/townbook/api/events/' + id,
 				dataType : 'json',
 				success : function(json) {
+          $rootScope.$broadcast('deleteEventCompleted', json)
 				}
 			});
 		}
