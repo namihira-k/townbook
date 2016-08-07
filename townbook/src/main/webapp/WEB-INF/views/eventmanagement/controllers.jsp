@@ -5,10 +5,12 @@ app.controller('eventManagementController', ['$scope', 'eventService', function 
   $scope.events = [];
 
   $scope.init = function () {
+    waitingDialog.show();
     _getEvent();
   }
 
   $scope.deleteEvent = function(event){
+    waitingDialog.show();
     eventService.deleteEvent(event.id);
   }
 
@@ -16,6 +18,7 @@ app.controller('eventManagementController', ['$scope', 'eventService', function 
     $scope.$apply(function () {
       angular.copy(params, $scope.events);
     });
+    waitingDialog.hide();
   });
   
   $scope.$on('deleteEventCompleted', function() {

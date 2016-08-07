@@ -6,6 +6,7 @@ app.controller('eventMgmtController', ['$scope', 'eventService', function ($scop
   $scope.events = [];
 
   $scope.init = function () {
+    waitingDialog.show();
     eventService.getEvents();
   }
 
@@ -13,6 +14,7 @@ app.controller('eventMgmtController', ['$scope', 'eventService', function ($scop
     $scope.$apply(function () {
       angular.copy(params, $scope.events);
     });
+    waitingDialog.hide();
   });
 
 }]);

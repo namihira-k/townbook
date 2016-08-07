@@ -4,6 +4,7 @@
   <title><tiles:getAsString name="title"/></title>
   <tiles:insertAttribute name="header" />
   <tiles:insertAttribute name="commonScript" />
+  <tiles:insertAttribute name="dialogScript" />
   <tiles:insertAttribute name="services" />
 </head>
 
