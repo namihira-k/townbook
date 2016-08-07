@@ -13,11 +13,12 @@ app.controller('eventMgmtController', ['$scope', 'eventService', function ($scop
   }
   
   $scope.postEvent = function(event){
+    waitingDialog.show();
     eventService.postEvent(event);
   }
 
   $scope.$on('postEventCompleted', function (event, params) {
-    console.log("postEventCompleted");
+    waitingDialog.hide();
   });
   
 }]);
