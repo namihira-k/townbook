@@ -8,6 +8,7 @@
     <put-attribute name="title" value="townbook" />
     <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
     <put-attribute name="commonScript" value="/WEB-INF/views/common/script.jsp" />
+    <put-attribute name="dialogScript" value="/WEB-INF/views/common/dialog.jsp" />
     <put-attribute name="navigation" value="/WEB-INF/views/common/navigation.jsp" />
     <put-attribute name="services" value="/WEB-INF/views/common/services.jsp" />
     <put-attribute name="controllers" value="" />
