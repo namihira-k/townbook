@@ -18,7 +18,7 @@
 		<li><a href="${contextPath}/view/events">イベント一覧を見る<span class="sr-only">(current)</span></a></li>
 		<li><a href="${contextPath}/view/events/registration">イベントを登録する<span class="sr-only">(current)</span></a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right"
+      <ul class="nav navbar-nav navbar-right">
         <li><a href="${contextPath}/view/events/management">イベントを管理する</a></li>
         <li><a href="${contextPath}/view/login">ログインする</a></li>
         <li><a href="${contextPath}/view/logout">ログアウトする</a></li>
