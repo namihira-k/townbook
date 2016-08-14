@@ -5,7 +5,7 @@
 		$scope.login = function() {
 			$scope.disabled = true;
 			var input = {
-				userId : $scope.userId,
+				username : $scope.username,
 				password : $scope.password
 			}
 			authService.login(input);
