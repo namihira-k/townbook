@@ -15,11 +15,17 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-		<li><a href="${contextPath}/view/events">イベント一覧を見る<span class="sr-only">(current)</span></a></li>
-		<li><a href="${contextPath}/view/events/registration">イベントを登録する<span class="sr-only">(current)</span></a></li>
+        <li><a href="${contextPath}/view/events">イベント一覧を見る<span class="sr-only">(current)</span></a></li>
       </ul>
+      <sec:authorize access="hasRole('USER')">
+	      <ul class="nav navbar-nav">
+	        <li><a href="${contextPath}/view/events/registration">イベントを登録する<span class="sr-only">(current)</span></a></li>
+	      </ul>
+      </sec:authorize>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="${contextPath}/view/events/management">イベントを管理する</a></li>
+        <sec:authorize access="hasRole('USER')">
+          <li><a href="${contextPath}/view/events/management">イベントを管理する</a></li>
+        </sec:authorize>
         <li><a href="${contextPath}/view/login">ログインする</a></li>
         <li><a href="${contextPath}/view/logout">ログアウトする</a></li>
       </ul>
