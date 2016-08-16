@@ -20,13 +20,15 @@ public class ApplicationUsernamePasswordAuthenticationProvider implements Authen
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        System.out.println("called ApplicationUsernamePasswordAuthenticationProvider#authenticate");
+        // Identify user
         final String username = authentication.getName();
         final String password = authentication.getCredentials().toString();
         final UserDto user = new UserDto();
         user.setUserId(username);
         user.setPassword(password);
-        return new UsernamePasswordAuthenticationToken(user, authentication.getCredentials(),
+        
+        // Create authentication token
+        return new UsernamePasswordAuthenticationToken(user, authentication.getCredentials(), 
                 Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER")));
     }
 
