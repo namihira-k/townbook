@@ -6,8 +6,15 @@
     <h2 class="text-center">ユーザー情報を入力してください</h2>
     <div class="well">
       <c:if test="${isError}">
-        <div class="alert alert-danger" role="alert">
-          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Login Error
+        <div class="alert alert-danger alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <strong>Login Error</strong>
+        </div>
+      </c:if>
+      <c:if test="${fromLogout}">
+        <div class="alert alert-success alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <strong>Success logout</strong>
         </div>
       </c:if>
       <form class="form center-block" action="${contextPath}/authentication" method="post">
