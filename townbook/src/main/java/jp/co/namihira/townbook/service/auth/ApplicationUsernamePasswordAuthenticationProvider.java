@@ -3,7 +3,7 @@
  */
 package jp.co.namihira.townbook.service.auth;
 
-import java.util.Collections;
+import java.util.Arrays;
 
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -29,7 +29,7 @@ public class ApplicationUsernamePasswordAuthenticationProvider implements Authen
         
         // Create authentication token
         return new UsernamePasswordAuthenticationToken(user, authentication.getCredentials(), 
-                Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER")));
+                Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
     }
 
     @Override
