@@ -21,7 +21,6 @@
 
   <definition name=".login" extends=".baseLayout">
     <put-attribute name="body" value="/WEB-INF/views/login/body.jsp" />
-    <put-attribute name="controllers" value="/WEB-INF/views/login/controllers.jsp" />
   </definition>
 
   <definition name=".logout" extends=".baseLayout">
