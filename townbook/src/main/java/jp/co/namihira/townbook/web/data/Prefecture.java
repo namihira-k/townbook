@@ -56,6 +56,16 @@ public enum Prefecture {
     MIYAZAKI(),
     KAGOSHIMA(),
     OKINAWA();
+    
+    private final String id;
+    
+    private Prefecture() {
+        this.id = name().toLowerCase();
+    }
+    
+    public String getId(){
+        return id;
+    }
 
     public String getDisplayname(final MessageSource messageSource, final Locale locale){
         return messageSource.getMessage("prefecture." + this.name().toLowerCase(), null, locale);
