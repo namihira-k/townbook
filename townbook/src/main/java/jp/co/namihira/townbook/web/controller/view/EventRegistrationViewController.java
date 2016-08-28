@@ -6,7 +6,6 @@ package jp.co.namihira.townbook.web.controller.view;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 import java.util.Arrays;
-import java.util.Locale;
 
 import jp.co.namihira.townbook.util.model.ModelConsts;
 import jp.co.namihira.townbook.web.controller.view.AbstractViewController;
