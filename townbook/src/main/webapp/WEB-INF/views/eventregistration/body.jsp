@@ -15,7 +15,8 @@
           <div class="col-xs-10">
             <select class="form-control" id="prefectureId" name="prefectureId" ng-model="event.prefectureId">
               <c:forEach var="pref" items="${Prefectures}" >
-                <option value="${pref.getId()}">${pref.getDisplayname(null, request.getLocale())}</option>
+                <c:set var="messageSource" value="${MessageSource}" />
+                <option value="${pref.getId()}">${pref.getDisplayname(messageSource, request.getLocale())}</option>
               </c:forEach>
             </select>
           </div>

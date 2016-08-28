@@ -28,8 +28,7 @@ public class EventRegistrationViewController extends AbstractViewController {
     private MessageSource messageSource;
     
     @RequestMapping(value = "/events/registration", method = GET)
-    public String get(final Model model, final Locale locale) {
-        model.addAttribute(ModelConsts.LOCALE, locale);
+    public String get(final Model model) {
         model.addAttribute(ModelConsts.MESSAGE_SOURCE, messageSource);
         model.addAttribute(ModelConsts.PREFECTURES, Arrays.asList(Prefecture.values()));
         return ".event.registration";
