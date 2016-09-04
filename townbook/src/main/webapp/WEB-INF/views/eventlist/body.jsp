@@ -1,6 +1,18 @@
 <div class="row" ng-controller="eventMgmtController" ng-init="init()">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
+  <div class="col-md-3">
+    <c:set var="messageSource" value="${MessageSource}" />
+    <div div class="list-group">
+      <c:forEach var="pref" items="${Prefectures}" >
+        <c:if test="${pref.isDefault()}" >
+          <a href="#${pref.getId()}" class="list-group-item active">${pref.getDisplayname(messageSource, request.getLocale())}</a>
+        </c:if>
+        <c:if test="${!pref.isDefault()}" >
+          <a href="#${pref.getId()}" class="list-group-item">${pref.getDisplayname(messageSource, request.getLocale())}</a>
+        </c:if>
+      </c:forEach>
+    </div>
+  </div>  
+  <div class="col-md-9">
     <h1>イベント一覧</h1>
     <div class="well" ng-repeat="event in events">
       <dl class="dl-horizontal">
@@ -15,5 +27,4 @@
       </dl>
     </div>
   </div>
-  <div class="col-md-3"></div>
 </div>
