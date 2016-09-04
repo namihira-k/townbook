@@ -74,5 +74,9 @@ public enum Prefecture {
     public static Prefecture parse(final String prefectureId) {
         return Prefecture.valueOf(prefectureId.toUpperCase());
     }
+    
+    public boolean isDefault(){
+        return this == TOKYO;
+    }
 
 }
