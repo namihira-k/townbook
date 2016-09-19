@@ -26,8 +26,12 @@
         <sec:authorize access="hasRole('USER')">
           <li><a href="${contextPath}/view/events/management">イベントを管理する</a></li>
         </sec:authorize>
-        <li><a href="${contextPath}/view/login">ログインする</a></li>
-        <li><a href="${contextPath}/view/logout">ログアウトする</a></li>
+        <sec:authorize access="!isAuthenticated()">
+          <li><a href="${contextPath}/view/login">ログインする</a></li>
+        </sec:authorize>
+        <sec:authorize access="isAuthenticated()">
+          <li><a href="${contextPath}/view/logout">ログアウトする</a></li>
+        </sec:authorize>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
