@@ -4,10 +4,10 @@
     <div div class="list-group">
       <c:forEach var="pref" items="${Prefectures}" >
         <c:if test="${pref.isDefault()}" >
-          <a href="#${pref.getId()}" class="list-group-item active">${pref.getDisplayname(messageSource, request.getLocale())}</a>
+          <a href="#${pref.getId()}" class="list-group-item active" ng-click="getEventsByPref( '${pref.getId()}' )">${pref.getDisplayname(messageSource, request.getLocale())}</a>
         </c:if>
         <c:if test="${!pref.isDefault()}" >
-          <a href="#${pref.getId()}" class="list-group-item">${pref.getDisplayname(messageSource, request.getLocale())}</a>
+          <a href="#${pref.getId()}" class="list-group-item" ng-click="getEventsByPref( '${pref.getId()}' )">${pref.getDisplayname(messageSource, request.getLocale())}</a>
         </c:if>
       </c:forEach>
     </div>

@@ -33,10 +33,11 @@
 		  });
 		}
 
-    this.getEvents = function() {
+    this.getEvents = function(params) {
 			$.ajax({
 				type : 'GET',
 				url : '/townbook/api/events',
+				data : params,
 				dataType : 'json',
 				success : function(json) {
 					$rootScope.$broadcast('getEventsCompleted', json)

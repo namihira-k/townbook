@@ -10,6 +10,14 @@ app.controller('eventMgmtController', ['$scope', 'eventService', function ($scop
     eventService.getEvents();
   }
 
+  $scope.getEventsByPref = function (prefectureId) {
+    console.log(prefectureId)
+    var params = {
+      prefectureId : prefectureId
+    }
+    eventService.getEvents(params);
+  }
+  
   $scope.$on('getEventsCompleted', function (event, params) {
     $scope.$apply(function () {
       angular.copy(params, $scope.events);
