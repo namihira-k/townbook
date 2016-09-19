@@ -1,2 +1,6 @@
 # townbook
-for sample app
+sample app
+* spring mvc
+* spring security
+* tiles
+* jsp
