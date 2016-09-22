@@ -76,7 +76,11 @@ public enum Prefecture {
     }
     
     public boolean isDefault(){
-        return this == TOKYO;
+        return this == getDefault();
     }
 
+    public static Prefecture getDefault(){
+        return TOKYO;
+    }
+    
 }

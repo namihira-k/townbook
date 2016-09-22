@@ -1,14 +1,9 @@
-<div class="row" ng-controller="eventMgmtController" ng-init="init()">
+<div class="row" ng-controller="eventMgmtController" ng-init="init('tokyo')">
   <div class="col-md-3">
     <c:set var="messageSource" value="${MessageSource}" />
     <div div class="list-group">
       <c:forEach var="pref" items="${Prefectures}" >
-        <c:if test="${pref.isDefault()}" >
-          <a href="#${pref.getId()}" class="list-group-item active">${pref.getDisplayname(messageSource, request.getLocale())}</a>
-        </c:if>
-        <c:if test="${!pref.isDefault()}" >
-          <a href="#${pref.getId()}" class="list-group-item">${pref.getDisplayname(messageSource, request.getLocale())}</a>
-        </c:if>
+        <a href="#${pref.getId()}" class="list-group-item" ng-class="{active: isActive( '${pref.getId()}' )}" ng-click="getEventsByPref( '${pref.getId()}' )">${pref.getDisplayname(messageSource, request.getLocale())}</a>
       </c:forEach>
     </div>
   </div>  

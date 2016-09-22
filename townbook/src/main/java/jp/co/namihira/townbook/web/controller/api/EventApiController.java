@@ -33,12 +33,18 @@ public class EventApiController extends AbstractApiController {
     private MessageSource messageSource;
 
     @RequestMapping(value = "/events", method = GET)
-    public List<EventDto> get(Locale locale) {
-        final List<EventDto> events = eventDao.selectAll();
+    public List<EventDto> get(Locale locale, EventDto event) {
+        String targetPrefId = event.getPrefectureId();
+        if (targetPrefId == null) {
+            targetPrefId = Prefecture.getDefault().getId();
+        }
+        final List<EventDto> events = eventDao.selectByPrefId(targetPrefId);
+        
         events.forEach(e -> {
             final Prefecture p = Prefecture.parse(e.getPrefectureId());
             e.setPrefectureName(p.getDisplayname(messageSource, locale));
         });
+        
         return events;
     }
 

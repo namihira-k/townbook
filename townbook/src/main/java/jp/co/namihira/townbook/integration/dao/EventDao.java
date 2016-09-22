@@ -45,6 +45,13 @@ public class EventDao {
         return dtos.get(0);
     }
 
+    public List<EventDto> selectByPrefId(final String prefectureId){
+        return jdbcTemplate.query(
+                              "SELECT * FROM Events WHERE prefectureId = :prefectureId",
+                              new MapSqlParameterSource().addValue("prefectureId", prefectureId),
+                              new BeanPropertyRowMapper<EventDto>(EventDto.class));
+    }
+    
     public int deleteByPk(final int id) {
         final EventDto dto = new EventDto();
         dto.setId(id);
