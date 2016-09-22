@@ -1,5 +1,5 @@
 <div class="row" ng-controller="eventMgmtController" ng-init="init('tokyo')">
-  <div class="col-md-3">
+  <div class="col-md-2" style="height:100%; overflow:scroll;">
     <c:set var="messageSource" value="${MessageSource}" />
     <div div class="list-group">
       <c:forEach var="pref" items="${Prefectures}" >
@@ -7,7 +7,7 @@
       </c:forEach>
     </div>
   </div>  
-  <div class="col-md-9">
+  <div class="col-md-10" style="height:100%; overflow:scroll;">
     <h1>イベント一覧</h1>
     <div class="well" ng-repeat="event in events">
       <dl class="dl-horizontal">
