@@ -8,9 +8,7 @@ app.controller('eventMgmtController', ['$scope', 'eventService', function ($scop
   $scope.currentPrefId;
 
   $scope.init = function (prefId) {
-    $scope.currentPrefId = prefId;
-    waitingDialog.show();
-    eventService.getEvents();
+    _getEvents(prefId);
   }
 
   $scope.isActive = function (prefId) {
@@ -18,11 +16,7 @@ app.controller('eventMgmtController', ['$scope', 'eventService', function ($scop
   }
   
   $scope.getEventsByPref = function (prefId) {
-    $scope.currentPrefId = prefId;
-    var params = {
-      prefectureId : prefId
-    }
-    eventService.getEvents(params);
+    _getEvents(prefId);
   }
   
   $scope.$on('getEventsCompleted', function (event, params) {
@@ -32,5 +26,14 @@ app.controller('eventMgmtController', ['$scope', 'eventService', function ($scop
     waitingDialog.hide();
   });
 
+  _getEvents = function (prefId) {
+    waitingDialog.show();
+    $scope.currentPrefId = prefId;
+    var params = {
+      prefectureId : prefId
+    }
+    eventService.getEvents(params);
+  }
+  
 }]);
 </script>
