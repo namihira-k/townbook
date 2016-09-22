@@ -1,5 +1,5 @@
 <div class="row" ng-controller="eventMgmtController" ng-init="init('tokyo')">
-  <div class="col-md-3">
+  <div class="col-md-2">
     <c:set var="messageSource" value="${MessageSource}" />
     <div div class="list-group">
       <c:forEach var="pref" items="${Prefectures}" >
@@ -22,4 +22,5 @@
       </dl>
     </div>
   </div>
+  <div class="col-md-1"></div>
 </div>
