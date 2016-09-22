@@ -4,16 +4,23 @@ var app = angular.module('townbookApp')
 app.controller('eventMgmtController', ['$scope', 'eventService', function ($scope, eventService) {
     
   $scope.events = [];
+  
+  $scope.currentPrefId;
 
-  $scope.init = function () {
+  $scope.init = function (prefId) {
+    $scope.currentPrefId = prefId;
     waitingDialog.show();
     eventService.getEvents();
   }
 
-  $scope.getEventsByPref = function (prefectureId) {
-    console.log(prefectureId)
+  $scope.isActive = function (prefId) {
+    return $scope.currentPrefId == prefId;
+  }
+  
+  $scope.getEventsByPref = function (prefId) {
+    $scope.currentPrefId = prefId;
     var params = {
-      prefectureId : prefectureId
+      prefectureId : prefId
     }
     eventService.getEvents(params);
   }
