@@ -1,7 +1,9 @@
+<%@ include file="../common/variable.jsp" %>
+
 <div ng-controller="eventMgmtController">
   <div class="row" >
     <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-6" ng-if="!showComplete">
       <h1>イベント登録</h1>
       <form class="form-horizontal">
         <div class="form-group">
@@ -52,7 +54,12 @@
         </div>
       </form>
     </div>
+    <div class="col-md-6" ng-if="showComplete">
+      <h1>登録が完了しました</h1>
+      <div class="text-center">
+        <a class="btn btn-primary" role="button" href="${contextPath}/view/events">イベント一覧を見る</a>
+      </div>
+    </div>
     <div class="col-md-3"></div>
   </div>
 </div>
-

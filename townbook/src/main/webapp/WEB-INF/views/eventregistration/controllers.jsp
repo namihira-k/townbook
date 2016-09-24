@@ -3,6 +3,8 @@ var app = angular.module('townbookApp')
 
 app.controller('eventMgmtController', ['$scope', 'eventService', function ($scope, eventService) {
     
+  $scope.showComplete = false;  
+  
   $scope.event = {
     title: "勉強会" + new Date(),
     prefectureId: "tokyo",
@@ -19,6 +21,9 @@ app.controller('eventMgmtController', ['$scope', 'eventService', function ($scop
 
   $scope.$on('postEventCompleted', function (event, params) {
     waitingDialog.hide();
+    $scope.$apply(function(){
+      $scope.showComplete = true;      
+    });
   });
   
 }]);
