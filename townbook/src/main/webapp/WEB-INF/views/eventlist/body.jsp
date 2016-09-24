@@ -9,6 +9,9 @@
   </div>  
   <div class="col-md-10" style="height:100%; overflow:scroll;">
     <h1>イベント一覧</h1>
+    <div class="alert alert-warning" role="alert" ng-if="events.length == 0">
+      <p>イベント情報はありません</p>
+    </div>
     <div class="well" ng-repeat="event in events">
       <dl class="dl-horizontal">
         <dt>イベント名</dt>
