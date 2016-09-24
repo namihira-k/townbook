@@ -8,9 +8,13 @@ html {
 }
 
 .jumbotron {
-    height: 1000px;
+    height: 750px;
     background: url("../img/home.jpg") center 0 no-repeat;
     background-size: cover;
+}
+
+.thumbnail img { 
+    min-height:50px; height:200px;
 }
 
 body {
