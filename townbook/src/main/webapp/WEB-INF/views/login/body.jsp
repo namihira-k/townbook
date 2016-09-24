@@ -3,7 +3,9 @@
 <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">
-    <h2 class="text-center">ユーザー情報を入力してください</h2>
+    <div class="text-center">
+      <h3>ユーザー情報を入力してください</h3>
+    </div>
     <div class="well">
       <c:if test="${isError}">
         <div class="alert alert-danger alert-dismissible" role="alert">

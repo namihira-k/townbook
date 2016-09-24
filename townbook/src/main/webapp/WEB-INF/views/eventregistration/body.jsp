@@ -4,7 +4,7 @@
   <div class="row" >
     <div class="col-md-3"></div>
     <div class="col-md-6" ng-if="!showComplete">
-      <h1>イベント登録</h1>
+      <h3>イベント登録</h3>
       <form class="form-horizontal">
         <div class="form-group">
            <label for="title" class="control-label col-xs-2">イベント名</label>
