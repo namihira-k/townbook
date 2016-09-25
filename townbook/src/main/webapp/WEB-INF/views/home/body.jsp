@@ -11,27 +11,21 @@
   <div class="col-md-1"></div>
   <div class="col-md-10">
     <div class="col-md-4">
-      <div class="thumbnail">
-        <img src="${contextPath}/resources/img/spread.png" class="img-circle">
-        <div class="caption text-center">
-          <h3>広める</h3>
-        </div>
+      <img src="${contextPath}/resources/img/spread.png" class="img-circle img-responsive">
+      <div class="caption text-center">
+        <h3>広める</h3>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="thumbnail">
-        <img src="${contextPath}/resources/img/search.png" class="img-circle">
-        <div class="caption text-center">
-          <h3>探す</h3>
-        </div>
+      <img src="${contextPath}/resources/img/search.png" class="img-circle img-responsive">
+      <div class="caption text-center">
+        <h3>探す</h3>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="thumbnail">
-        <img src="${contextPath}/resources/img/join.png" class="img-circle">
-        <div class="caption text-center">
-          <h3>参加する</h3>
-        </div>
+      <img src="${contextPath}/resources/img/join.png" class="img-circle img-responsive">
+      <div class="caption text-center">
+        <h3>参加する</h3>
       </div>
     </div>
   </div>

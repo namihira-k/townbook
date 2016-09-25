@@ -13,10 +13,6 @@ html {
     background-size: cover;
 }
 
-.thumbnail img { 
-    min-height:50px; height:200px;
-}
-
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
