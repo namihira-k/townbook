@@ -37,7 +37,7 @@ public class EventApiController extends AbstractApiController {
     public List<EventDto> get(Locale locale, EventDto event) {
         String targetPrefId = event.getPrefectureId();
         List<EventDto> events = CommonUtil.list();
-        if (targetPrefId == null || targetPrefId == "") {
+        if (CommonUtil.isEmpty(targetPrefId)) {
             events = eventDao.selectAll();
         } else {
             events = eventDao.selectByPrefId(targetPrefId);
