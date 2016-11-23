@@ -10,6 +10,7 @@ import java.util.Locale;
 
 import jp.co.namihira.townbook.integration.dao.EventDao;
 import jp.co.namihira.townbook.integration.dto.EventDto;
+import jp.co.namihira.townbook.util.CommonUtil;
 import jp.co.namihira.townbook.web.data.Prefecture;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,10 +36,12 @@ public class EventApiController extends AbstractApiController {
     @RequestMapping(value = "/events", method = GET)
     public List<EventDto> get(Locale locale, EventDto event) {
         String targetPrefId = event.getPrefectureId();
-        if (targetPrefId == null) {
-            targetPrefId = Prefecture.getDefault().getId();
+        List<EventDto> events = CommonUtil.list();
+        if (CommonUtil.isEmpty(targetPrefId)) {
+            events = eventDao.selectAll();
+        } else {
+            events = eventDao.selectByPrefId(targetPrefId);
         }
-        final List<EventDto> events = eventDao.selectByPrefId(targetPrefId);
         
         events.forEach(e -> {
             final Prefecture p = Prefecture.parse(e.getPrefectureId());
