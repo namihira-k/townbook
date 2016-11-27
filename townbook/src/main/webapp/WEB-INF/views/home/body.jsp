@@ -3,7 +3,7 @@
 <div class="jumbotron">
   <div class="container">
     <h1>townbookへようこそ！</h1>
-    <p>街の気になるイベントを見つけましょう！</p>
+    <p>今から行けるイベントを見つけましょう！</p>
     <p><a href="${contextPath}/view/events">イベント一覧を見る <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></p>
   </div>
 </div>
