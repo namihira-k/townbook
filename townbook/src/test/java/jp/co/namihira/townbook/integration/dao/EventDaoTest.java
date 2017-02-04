@@ -27,6 +27,7 @@ public class EventDaoTest {
     @Autowired
     private EventDao eventDao;
 
+    @Ignore
     @Test
     public void test_insert(){
         // setup
