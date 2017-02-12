@@ -5,14 +5,14 @@ package jp.co.namihira.townbook.integration.dao;
 
 import java.util.List;
 
-import jp.co.namihira.townbook.integration.dto.EventDto;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import jp.co.namihira.townbook.integration.dto.EventDto;
 
 @Repository
 public class EventDao {
@@ -51,7 +51,15 @@ public class EventDao {
                               new MapSqlParameterSource().addValue("prefectureId", prefectureId),
                               new BeanPropertyRowMapper<EventDto>(EventDto.class));
     }
-    
+
+    public int countAll(){
+        int count = jdbcTemplate.queryForObject(
+                                   "SELECT count(*) from Events",
+                                   new BeanPropertySqlParameterSource(null),
+                                   Integer.class);
+        return count;
+    }
+
     public int deleteByPk(final int id) {
         final EventDto dto = new EventDto();
         dto.setId(id);

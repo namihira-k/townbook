@@ -4,7 +4,9 @@
     <div div class="list-group">
       <a href="#all" class="list-group-item" ng-class="{active: isActive('')}" ng-click="getEventsByPref( '' )">すべて</a>
       <c:forEach var="pref" items="${Prefectures}" >
-        <a href="#${pref.getId()}" class="list-group-item" ng-class="{active: isActive( '${pref.getId()}' )}" ng-click="getEventsByPref( '${pref.getId()}' )">${pref.getDisplayname(messageSource, request.getLocale())}</a>
+        <a href="#${pref.getId()}" class="list-group-item" ng-class="{active: isActive( '${pref.getId()}' )}" ng-click="getEventsByPref( '${pref.getId()}' )">
+          ${pref.getDisplayname(messageSource, request.getLocale())} <span class="badge">{{ getCountByPref('${pref.getId()}') }}</span>
+        </a>
       </c:forEach>
     </div>
   </div>
