@@ -7,9 +7,9 @@
         <a href="#${pref.getId()}" class="list-group-item" ng-class="{active: isActive( '${pref.getId()}' )}" ng-click="getEventsByPref( '${pref.getId()}' )">${pref.getDisplayname(messageSource, request.getLocale())}</a>
       </c:forEach>
     </div>
-  </div>  
+  </div>
   <div class="col-md-10" style="height:100%; overflow:scroll;">
-    <h3>イベント一覧</h3>
+    <h3>イベント一覧 <span class="badge">{{ events.length }}</span></h3>
     <div class="alert alert-warning" role="alert" ng-if="events.length == 0">
       <p>イベント情報はありません</p>
     </div>
