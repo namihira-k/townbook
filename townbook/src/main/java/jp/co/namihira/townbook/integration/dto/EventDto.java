@@ -5,10 +5,11 @@ package jp.co.namihira.townbook.integration.dto;
 
 import java.time.LocalDateTime;
 
-import lombok.Data;
-
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
+
+import jp.co.namihira.townbook.util.DateTimeUtil;
+import lombok.Data;
 
 @Data
 public class EventDto {
@@ -21,8 +22,18 @@ public class EventDto {
     private String content;
     @DateTimeFormat(iso = ISO.DATE_TIME)
     private LocalDateTime startDateTime;
+    private String startDateTimeStr;
     @DateTimeFormat(iso = ISO.DATE_TIME)
     private LocalDateTime endDateTime;
+    private String endDateTimeStr;
     private String url;
+
+    public String getStartDateTimeStr() {
+        return startDateTime.format(DateTimeUtil.getDateTimeFormatter());
+    }
+
+    public String getEndDateTimeStr() {
+        return endDateTime.format(DateTimeUtil.getDateTimeFormatter());
+    }
 
 }

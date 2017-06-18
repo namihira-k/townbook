@@ -21,6 +21,10 @@
         <dd>{{ event.prefectureName }}</dd>
         <dt>場所</dt>
         <dd>{{ event.place }}</dd>
+        <dt>開始日時</dt>
+        <dd>{{ event.startDateTimeStr }}</dd>
+        <dt>終了日時</dt>
+        <dd>{{ event.endDateTimeStr }}</dd>
         <dt>説明</dt>
         <dd>{{ event.content }}</dd>
       </dl>
