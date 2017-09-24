@@ -32,18 +32,18 @@
         <div class="form-group">
           <label for="startDateTime" class="control-label col-xs-2">開始日時</label>
           <div class="col-xs-10">
-            <div class='input-group date'>
+            <div id='id_startDateTime' class='input-group date'>
               <input type="text" class="form-control" id="startDateTime" name="startDateTime" ng-model="event.startDateTime" value="2016-08-06T9:33:00.000">
-              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              <span class="input-group-addon" ng-click="setStartDateTime()"><span class="glyphicon glyphicon-calendar"></span></span>
             </div>
           </div>
         </div>
         <div class="form-group">
           <label for="endDateTime" class="control-label col-xs-2">終了日時</label>
           <div class="col-xs-10">
-            <div class='input-group date'>
+            <div id='id_endDateTime' class='input-group date'>
               <input type="text" class="form-control" id="endDateTime" name="endDateTime" ng-model="event.endDateTime" value="2016-08-06T9:33:00.000">
-              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              <span class="input-group-addon" ng-click="setEndDateTime()"><span class="glyphicon glyphicon-calendar"></span></span>
             </div>
           </div>
         </div>
